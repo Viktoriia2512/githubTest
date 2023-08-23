@@ -1,0 +1,16 @@
+﻿<Application x:Class="SkylightFrameKonfigurator.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:SkylightFrameKonfigurator"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <!-- Definition of custom color: -->
+            <!--<Color x:Key="AccentLightBlue4">#3EBAEC</Color>
+<SolidColorBrush x:Key="AccentLightBlueBrush" Color="{StaticResource AccentLightBlue4}" />-->
+            <SolidColorBrush x:Key="AccentLightBlueBrush" Color="#3EBAEC" />
+            <SolidColorBrush x:Key="PrimaryGrey6" Color="#52565A" />
+        </ResourceDictionary>
+
+    </Application.Resources>
+</Application>

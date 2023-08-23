@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExperimentSkylightframe", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LichtbandzargeApp", "LichtbandzargeApp\LichtbandzargeApp.csproj", "{E60F1883-0C23-4BFA-9A2F-E86DFE34AF5D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkylightFrameKonfigurator", "..\RelayCommand\SkylightFrameKonfigurator\SkylightFrameKonfigurator.csproj", "{EED3B245-8389-490B-B772-F29DD50A2D5B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkylightFrameKonfigurator", "SkylightFrameKonfigurator\SkylightFrameKonfigurator.csproj", "{EED3B245-8389-490B-B772-F29DD50A2D5B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

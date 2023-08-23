@@ -1,0 +1,264 @@
+﻿<Window x:Class="SkylightFrameKonfigurator.Views.WindowTyp1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:tsd="clr-namespace:Tekla.Structures.Dialog;assembly=Tekla.Structures.Dialog"
+        xmlns:local="clr-namespace:SkylightFrameKonfigurator.Views"
+        xmlns:UIControls="clr-namespace:Tekla.Structures.Dialog.UIControls;assembly=Tekla.Structures.Dialog"
+        mc:Ignorable="d" FontSize="18" FontFamily="Goldbeck TT"
+        Title="GOLDBECK Lichtbandzarge" Height="650" Width="700" Background="WhiteSmoke">
+    
+    <!--<Window.Resources>
+        -->
+    <!-- Define a style for the buttons -->
+    <!--        
+    </Window.Resources>-->
+
+    <Grid Margin="0,40,0,0" Background="WhiteSmoke">
+
+
+        <Image Source="pack://application:,,,/Resources\Goldbeck-Logo@2x.png"  Width="100" Height="25" VerticalAlignment="Top" Margin="20,-30,0,0" HorizontalAlignment="Left" />
+        <Image Source="pack://application:,,,/Resources\Typ1Logo.png"  Width="110" Height="30"  VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,-35,100,0"/>
+        <TextBlock Grid.Row="0" FontSize="14" Text="Zwischen Traufe und First"  HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,-25,160,0"/>
+        <Button Click="Button_Close_Click"  FontSize="14"  Width="30" Height="30"  HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,-35,10,0">
+            <!--<TextBlock Text="&#x2716;" FontSize="14" FontWeight="Bold" />-->
+            <Image Source="pack://application:,,,/Resources\Close.png" Width="25" Height="25" />
+        </Button>
+        <Button x:Name="LoadSettings" Content="Laden"  FontSize="14" Width="70" Height="20" VerticalAlignment="Top" Margin="80,0,0,0" HorizontalAlignment="Left">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <!-- Set the background color to the defined AccentLightBlue4 color -->
+                    <Setter Property="Background" Value="{StaticResource PrimaryGrey6}" />
+                    <!-- Set the text color to white -->
+                    <Setter Property="Foreground" Value="White" />
+                </Style>
+            </Button.Style>
+        </Button>
+        <Button x:Name="SaveSettings" Content="Speichern"  FontSize="14" Width="70" Height="20" VerticalAlignment="Top" Margin="5,0,0,0" HorizontalAlignment="Left">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <!-- Set the background color to the defined AccentLightBlue4 color -->
+                    <Setter Property="Background" Value="{StaticResource PrimaryGrey6}" />
+                    <!-- Set the text color to white -->
+                    <Setter Property="Foreground" Value="White" />
+                </Style>
+            </Button.Style>
+        </Button>
+        <Button x:Name="SaveSettingsAs" Content="Speichern unter"  FontSize="14" Width="100" Height="20" VerticalAlignment="Top" Margin="400,0,0,0" HorizontalAlignment="Left">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <!-- Set the background color to the defined AccentLightBlue4 color -->
+                    <Setter Property="Background" Value="{StaticResource PrimaryGrey6}" />
+                    <!-- Set the text color to white -->
+                    <Setter Property="Foreground" Value="White" />
+                </Style>
+            </Button.Style>
+        </Button>
+        <Button x:Name="ApplyTyp1Window1" Content="Anwenden" Command="{Binding FirstCommand}" Width="80" Height="30" FontSize="14" HorizontalAlignment="Left" Margin="20,-4,0,10" VerticalAlignment="Bottom" >
+            <Button.Style>
+                <Style TargetType="Button">
+                    <!-- Set the background color to the defined AccentLightBlue4 color -->
+                    <Setter Property="Background" Value="{StaticResource AccentLightBlueBrush}" />
+                    <!-- Set the text color to white -->
+                    <Setter Property="Foreground" Value="White" />
+                    <Setter Property="BorderBrush" Value="{StaticResource AccentLightBlueBrush}" />
+                    <Setter Property="BorderThickness" Value="1" />
+                    <!--Making the button to blink:(delete if I don't need this function)-->
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Trigger.EnterActions>
+                                <!-- Define the storyboard for the blinking animation -->
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <!-- Fade the opacity in -->
+                                        <DoubleAnimation Storyboard.TargetProperty="Opacity" To="0.5" Duration="0:0:0.2" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.EnterActions>
+                            <Trigger.ExitActions>
+                                <!-- Define the storyboard for the blinking animation on exit -->
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <!-- Fade the opacity back to normal -->
+                                        <DoubleAnimation Storyboard.TargetProperty="Opacity" To="1" Duration="0:0:0.2" />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </Trigger.ExitActions>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+
+        <Button x:Name="Cancel" Content="Abbrechen"  Width="80" Height="30" FontSize="14" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="120,0,0,10">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <!-- Set the background color to the defined AccentLightBlue4 color -->
+                    <Setter Property="Background" Value="White" />
+                    <!-- Set the text color to white -->
+                    <Setter Property="Foreground" Value="{StaticResource PrimaryGrey6}" />
+                    <Setter Property="BorderBrush" Value="{StaticResource AccentLightBlueBrush}" />
+                    <Setter Property="BorderThickness" Value="1" />
+                </Style>
+            </Button.Style>
+        </Button>
+        <TextBox x:Name="SavedSettingsName" Width="120" Height="20" HorizontalAlignment="Left" Margin="510,0,0,0" VerticalAlignment="Top" />
+        <ComboBox Width="200" Height="20" FontSize="14" HorizontalAlignment="Left" Margin="155,0,0,0" VerticalAlignment="Top"  SelectedIndex="0">
+            <ComboBoxItem Content="Saved settings 1" />
+            <!-- Add more ComboBoxItems as needed -->
+        </ComboBox>
+
+
+
+        <!-- Typ1 "Zwischen Traufe und First" -->
+        <!-- First TabControl -->
+        <TabControl Grid.ColumnSpan="3" Background="White"  Width="690" Margin="0,40,0,50">
+            <TabItem Header="Abbildung" FontSize="14" Height="30">
+
+                <Grid Margin="20,0,20,20">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+
+                    </Grid.RowDefinitions>
+
+                    <!--Image Source="pack://application:,,,/Resources\Goldbeck-Logo@2x.png"  Width="100" Height="25" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2"/-->
+                    <!--Image Source="pack://application:,,,/Resources\Typ1Logo.png"  Width="110" Height="30" Grid.Column="4" Grid.Row="0" Grid.ColumnSpan="1"/-->
+                    <!--TextBlock Grid.Column="2" Grid.Row="0" FontSize="14" Text="Zwischen Traufe und First" Grid.ColumnSpan="2" HorizontalAlignment="Right" VerticalAlignment="Center"/-->
+
+                    <TextBlock Grid.Column="1" Grid.Row="4" FontSize="14" Text="Länge:"/>
+                    <TextBox x:Name="FieldLengthTextBox" Grid.Column="2" Grid.Row="4" Width="80" Height="30" HorizontalAlignment="Left" Margin="40,0,0,250" Grid.RowSpan="2"/>
+                    <TextBlock Grid.Column="4" Grid.Row="5" FontSize="14" Text="Breite:" Margin="20,110,0,0"/>
+                    <TextBox x:Name="FrameWidthTextBox" Grid.Column="4" Grid.Row="5" Width="80" Height="30" Margin="0,130,0,0" Grid.RowSpan="2" VerticalAlignment="Top"/>
+                    <Image Source="pack://application:,,,/Resources\Typ1FrameWindow1.png" Width="500" Height="250" Grid.Column="2" Grid.Row="5" />
+                    <!--Button x:Name="ApplyTyp1Window1" Content="Anwenden" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="1" Width="80" Height="40" FontSize="14" HorizontalAlignment="Center" /-->
+                    <!--Button x:Name="Cancel" Content="Abbrechen" Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="2" Width="80" Height="40" FontSize="14" HorizontalAlignment="Left" /-->
+                </Grid>
+
+            </TabItem>
+            <TabItem Header="Parameter" FontSize="14">
+                <Grid Margin="20,0,20,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="140"/>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="120"/>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="120"/>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <CheckBox x:Name="UserDefinedCheckBox" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Right" Margin="0,10,0,0"/>
+                    <TextBlock Grid.Column="1" Grid.Row="0" FontSize="14" Text="Benutzerdefinierte" FontWeight="Bold" Margin="0,10,0,0"/>
+
+                    <TextBlock Grid.Column="1" Grid.Row="4" FontSize="14" Text="Strebe" FontWeight="Bold" />
+                    <CheckBox x:Name="AddStrutsCheckBox" Grid.Column="1" Grid.Row="6" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    <Button Click="Button_StrutSettings_Click" Width="20" Height="20"  Grid.Column="1" Grid.Row="6" HorizontalAlignment="Left" Margin="20,0,0,0">
+                        <Image Source="pack://application:,,,/Resources\Settings1.png" Width="15" Height="15" />
+                    </Button>
+                    <Image Source="pack://application:,,,/Resources\Strut.png"  Width="120" Height="150" Grid.Column="1" Grid.Row="7" Grid.RowSpan="2" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                    <!--<TextBlock Grid.Column="0" Grid.Row="8" FontSize="14" Text="Material:" Margin="0,80,0,0"/>
+                    <ComboBox Height="30" FontSize="14" Grid.Column="1" Grid.Row="8" Width="100" SelectedIndex="0" VerticalAlignment="Top" Margin="0,70,0,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" HorizontalAlignment="Left">
+                        <ComboBoxItem Content="S320GD + Z275" />
+                        <ComboBoxItem Content="make access to library?" />
+                    </ComboBox>-->
+                    <TextBlock Grid.Column="3" Grid.Row="0" FontSize="14" Text="Längszarge" FontWeight="Bold" Margin="25,10,0,0"/>
+                    <TextBlock Grid.Column="2" Grid.Row="1" FontSize="14" Text="Material:"/>
+                    <TextBlock Grid.Column="2" Grid.Row="3" FontSize="14" Text="Profile:" />
+                    <TextBox x:Name="LongFrameMaterialTextBox" Grid.Column="3" Grid.Row="1" Width="100" Height="30" />
+                    <ComboBox x:Name="LongFrameProfileComboBox" Height="30" FontSize="14" Grid.Column="3" Grid.Row="3" SelectedIndex="0" Width="100" VerticalAlignment="Top" Background="SeaShell" Foreground="Gray" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">
+                        <ComboBoxItem Content="GVZ530.3" />
+                        <ComboBoxItem Content="benutzerdefinierte" />
+                    </ComboBox>
+                    <Image Source="pack://application:,,,/Resources\LongFrame1Typ.png"  Width="120" Height="250" Grid.Column="3" Grid.Row="7" Grid.RowSpan="2" />
+                    <TextBlock Grid.Column="6" Grid.Row="0" FontSize="14" Text="Kopfzarge" FontWeight="Bold" Margin="25,10,0,0"/>
+                    <TextBlock Grid.Column="5" Grid.Row="1" FontSize="14" Text="Material:"/>
+                    <TextBlock Grid.Column="5" Grid.Row="3" FontSize="14" Text="Profile:" />
+                    <TextBox x:Name="HeadFrameMaterialTextBox" Grid.Column="6" Grid.Row="1" Width="100" Height="30" />
+                    <TextBox x:Name="HeadFrameProfileTextBox" Text="GVZ532.2" Foreground="Gray" Height="30" Width="100" FontSize="14" Grid.Column="6" Grid.Row="3" Background="WhiteSmoke" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" />
+                    <Image Source="pack://application:,,,/Resources\HeadFrame.png"  Width="120" Height="220" Grid.Column="6" Grid.Row="7" VerticalAlignment="Top" Grid.RowSpan="2"/>
+                    <TextBox x:Name="TopHookSizeLongFrameTextBox" Grid.Column="4" Grid.Row="7" Width="50" Height="30" Text="21" Foreground="Gray" Background="WhiteSmoke" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="0,-25,0,0"/>
+                    <TextBox x:Name="TopWidthLongFrameTextBox" Grid.Column="3" Grid.Row="6" Width="50" Height="30" Text="80" Foreground="Gray" Background="WhiteSmoke" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" />
+                    <TextBox x:Name="HeightLongFrameTextBox" Grid.Column="2" Grid.Row="8" Width="50" Height="30" Text="530" Foreground="Gray" Background="WhiteSmoke" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Top"/>
+                    <TextBox x:Name="BottomWidthLongFrameTextBox" Grid.Column="3" Grid.Row="9" Width="50" Height="30" Text="110" Foreground="Gray" Background="WhiteSmoke" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" />
+                    <TextBox x:Name="BottomHookSizeLongFrameTextBox" Grid.Column="4" Grid.Row="8" Width="50" Height="30" Text="33" Foreground="Gray" Background="WhiteSmoke" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Bottom"/>
+                    <TextBox x:Name="TopHookSizeHeadFrameTextBox" Grid.Column="7" Grid.Row="7" Width="50" Height="30" Text="21" Foreground="Gray" Background="WhiteSmoke" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="0,-25,0,0"/>
+                    <TextBox x:Name="TopWidthHeadFrameTextBox" Grid.Column="6" Grid.Row="6" Width="50" Height="30" Text="80" Foreground="Gray" Background="WhiteSmoke" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                    <TextBox x:Name="HeightHeadFrameTextBox" Grid.Row="8" Width="50" Grid.Column="5" Grid.ColumnSpan="2" Height="30" Text="530" Foreground="Gray" Background="WhiteSmoke" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+
+
+                </Grid>
+
+            </TabItem>
+            <TabItem Header="Schrauben" FontSize="14">
+                <Grid Margin="20,0,20,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition/>
+
+                    </Grid.RowDefinitions>
+                    <Image Source="pack://application:,,,/Resources\BeamLongFrameConnection.png"  Width="150" Height="290" Grid.Column="0" Grid.Row="0" Grid.RowSpan="6" />
+                    <TextBox x:Name="SizeBetweenBolts_Beam_LongFrameTextBox" Width="50" Height="30"  Margin="30,5,0,0" />
+                    <TextBox x:Name="SizeBetweenBolt_EdgeLongFrameTextBox" Width="50" Height="30"  Margin="-20,280,0,0" Grid.RowSpan="6" />
+                    <Image Source="pack://application:,,,/Resources\BeamFrameConnection.png"  Width="170" Height="150" Grid.Column="0" Grid.Row="7" Grid.RowSpan="2" Margin="20,0,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="SizeBetweenEdgeLongFrame_EdgeBeamTextBox" Width="50" Height="30" Grid.Column="1" Grid.Row="8" Margin="0,-50,0,0"  />
+
+                </Grid>
+            </TabItem>
+
+        </TabControl>
+
+        <!-- Second TabControl -->
+
+    </Grid>
+</Window>
