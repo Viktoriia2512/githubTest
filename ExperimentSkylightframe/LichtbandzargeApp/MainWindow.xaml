@@ -16,7 +16,8 @@
         <TextBox Name="textBoxMaterial"  HorizontalAlignment="Left" Margin="643,352,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label Content="Frame Width" HorizontalAlignment="Left" Margin="643,186,0,0" VerticalAlignment="Top"/>
         <Label Content="Material" HorizontalAlignment="Left" Margin="669,315,0,0" VerticalAlignment="Top"/>
-        <Label Content="Zwischen Traufe und First " HorizontalAlignment="Left" Margin="550,10,0,0" VerticalAlignment="Top"/>
+        <Label Content="Zwischen Traufe und First " HorizontalAlignment="Left" Margin="500,10,0,0" VerticalAlignment="Top"/>
+        <Image Source="C:\Users\poliakov\OneDrive - Goldbeck GmbH\Desktop\OpenAPI\ExperimentSkylightframe\LichtbandzargeApp\Resourses\Typ1Logo.png" Height="40" Width="70" Margin="720,10,10,580" />
 
 
 
