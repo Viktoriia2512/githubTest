@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34003.232
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExperimentSkylightframe", "ExperimentSkylightframe\ExperimentSkylightframe.csproj", "{D1348C3D-B67E-4AF0-93B0-E1122B1B21CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LichtbandzargeApp", "LichtbandzargeApp\LichtbandzargeApp.csproj", "{E60F1883-0C23-4BFA-9A2F-E86DFE34AF5D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkylightFrameKonfigurator", "..\RelayCommand\SkylightFrameKonfigurator\SkylightFrameKonfigurator.csproj", "{EED3B245-8389-490B-B772-F29DD50A2D5B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D1348C3D-B67E-4AF0-93B0-E1122B1B21CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1348C3D-B67E-4AF0-93B0-E1122B1B21CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1348C3D-B67E-4AF0-93B0-E1122B1B21CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1348C3D-B67E-4AF0-93B0-E1122B1B21CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E60F1883-0C23-4BFA-9A2F-E86DFE34AF5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E60F1883-0C23-4BFA-9A2F-E86DFE34AF5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E60F1883-0C23-4BFA-9A2F-E86DFE34AF5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E60F1883-0C23-4BFA-9A2F-E86DFE34AF5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EED3B245-8389-490B-B772-F29DD50A2D5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EED3B245-8389-490B-B772-F29DD50A2D5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EED3B245-8389-490B-B772-F29DD50A2D5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EED3B245-8389-490B-B772-F29DD50A2D5B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {76F9467F-208C-4F96-A945-5E838E380068}
+	EndGlobalSection
+EndGlobal

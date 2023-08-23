@@ -1,0 +1,24 @@
+﻿<Window x:Class="LichtbandzargeApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LichtbandzargeApp"                
+        xmlns:tsd="clr-namespace:Tekla.Structures.Dialog;assembly=Tekla.Structures.Dialog"        
+        xmlns:UIControls="clr-namespace:Tekla.Structures.Dialog.UIControls;assembly=Tekla.Structures.Dialog"
+        mc:Ignorable="d" FontSize="18" FontFamily="Goldbeck TT"
+        Title="GOLDBECK Lichtbandzarge" Height="650" Width="800" Background="White">
+
+    <Grid>
+        <Image Source="C:\Users\poliakov\OneDrive - Goldbeck GmbH\Desktop\OpenAPI\ExperimentSkylightframe\LichtbandzargeApp\Resourses\Typ1FrameWindow1.png" Height="250" Margin="57,97,170,287" />
+        <Button Content="Insert Skylightframe" Name="btnInsertFrame"  HorizontalAlignment="Left" Margin="58,430,0,0" VerticalAlignment="Top" Width="252" Click="btnInsertFrame_Click"/>
+        <TextBox Name="textBoxFrameWidth"  HorizontalAlignment="Left" Margin="634,242,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="textBoxMaterial"  HorizontalAlignment="Left" Margin="643,352,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Frame Width" HorizontalAlignment="Left" Margin="643,186,0,0" VerticalAlignment="Top"/>
+        <Label Content="Material" HorizontalAlignment="Left" Margin="669,315,0,0" VerticalAlignment="Top"/>
+        <Label Content="Zwischen Traufe und First " HorizontalAlignment="Left" Margin="550,10,0,0" VerticalAlignment="Top"/>
+
+
+
+    </Grid>
+</Window>
