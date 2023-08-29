@@ -11,17 +11,14 @@ namespace LichtbandzargeApp.Commands
     public class CustomCommandImplementation : ICommand
     {
         private readonly Action<object> _execute;
+        //private Predicate<object> _canExecute;
         private readonly Func<object, bool> _canExecute;
 
-        public CustomCommandImplementation(Action<object> insertFrameByPickingTwoPoints)
+        
+        public CustomCommandImplementation(Action<object> execute) : this(execute, null)
         {
-            InsertFrameByPickingTwoPoints = insertFrameByPickingTwoPoints;
+
         }
-
-        //public CustomCommandImplementation(Action<object> execute) : this(execute, null)
-        //{
-
-        //}
 
         public CustomCommandImplementation(Action<object> execute, Func<object, bool> canExecute)
         {
@@ -31,8 +28,7 @@ namespace LichtbandzargeApp.Commands
             _canExecute = canExecute ?? (x => true);
         }
 
-        public Action<object> InsertFrameByPickingTwoPoints { get; }
-
+        
         public bool CanExecute(object parameter)
         {
             return _canExecute(parameter);

@@ -26,15 +26,15 @@ namespace LichtbandzargeApp.DataModel
 
         
         ////purpose is to set the value of a property and raise the PropertyChanged event if the new value is different from the existing one.
-        protected virtual bool SetProperty<T>(ref T storage, T value, [CallerMemberName] string propertyName = "")
-        {
-            //This checks whether the new value is equal to the current value of the property:
-            if (EqualityComparer<T>.Default.Equals(storage, value))
-                return false;
-            storage = value;
-            this.OnPropertyChanged(propertyName);
-            return true;
-        }
+        //protected virtual bool SetProperty<T>(ref T storage, T value, [CallerMemberName] string propertyName = "")
+        //{
+        //    //This checks whether the new value is equal to the current value of the property:
+        //    if (EqualityComparer<T>.Default.Equals(storage, value))
+        //        return false;
+        //    storage = value;
+        //    this.OnPropertyChanged(propertyName);
+        //    return true;
+        //}
 
     }
 }

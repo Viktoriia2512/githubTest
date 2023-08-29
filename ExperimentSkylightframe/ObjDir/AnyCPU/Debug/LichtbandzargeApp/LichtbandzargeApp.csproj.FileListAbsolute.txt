@@ -20,3 +20,14 @@ C:\Users\poliakov\OneDrive - Goldbeck GmbH\Desktop\Projects\githubTest\Experimen
 C:\Users\poliakov\OneDrive - Goldbeck GmbH\Desktop\Projects\githubTest\ExperimentSkylightframe\ObjDir\AnyCPU\Debug\LichtbandzargeApp\GeneratedInternalTypeHelper.g.cs
 C:\Users\poliakov\OneDrive - Goldbeck GmbH\Desktop\Projects\githubTest\ExperimentSkylightframe\ObjDir\AnyCPU\Debug\LichtbandzargeApp\LichtbandzargeApp_MarkupCompile.cache
 C:\Users\poliakov\OneDrive - Goldbeck GmbH\Desktop\Projects\githubTest\ExperimentSkylightframe\ObjDir\AnyCPU\Debug\LichtbandzargeApp\LichtbandzargeApp_MarkupCompile.lref
+C:\Users\poliakov\OneDrive - Goldbeck GmbH\Desktop\Projects\githubTest\ExperimentSkylightframe\LichtbandzargeApp\bin\Debug\LichtbandzargeApp.exe.config
+C:\Users\poliakov\OneDrive - Goldbeck GmbH\Desktop\Projects\githubTest\ExperimentSkylightframe\LichtbandzargeApp\bin\Debug\LichtbandzargeApp.exe
+C:\Users\poliakov\OneDrive - Goldbeck GmbH\Desktop\Projects\githubTest\ExperimentSkylightframe\LichtbandzargeApp\bin\Debug\LichtbandzargeApp.pdb
+C:\Users\poliakov\OneDrive - Goldbeck GmbH\Desktop\Projects\githubTest\ExperimentSkylightframe\ObjDir\AnyCPU\Debug\LichtbandzargeApp\App.baml
+C:\Users\poliakov\OneDrive - Goldbeck GmbH\Desktop\Projects\githubTest\ExperimentSkylightframe\ObjDir\AnyCPU\Debug\LichtbandzargeApp\MainWindow.baml
+C:\Users\poliakov\OneDrive - Goldbeck GmbH\Desktop\Projects\githubTest\ExperimentSkylightframe\ObjDir\AnyCPU\Debug\LichtbandzargeApp\LichtbandzargeApp.g.resources
+C:\Users\poliakov\OneDrive - Goldbeck GmbH\Desktop\Projects\githubTest\ExperimentSkylightframe\ObjDir\AnyCPU\Debug\LichtbandzargeApp\LichtbandzargeApp.Properties.Resources.resources
+C:\Users\poliakov\OneDrive - Goldbeck GmbH\Desktop\Projects\githubTest\ExperimentSkylightframe\ObjDir\AnyCPU\Debug\LichtbandzargeApp\LichtbandzargeApp.csproj.GenerateResource.cache
+C:\Users\poliakov\OneDrive - Goldbeck GmbH\Desktop\Projects\githubTest\ExperimentSkylightframe\ObjDir\AnyCPU\Debug\LichtbandzargeApp\LichtbandzargeApp.csproj.CoreCompileInputs.cache
+C:\Users\poliakov\OneDrive - Goldbeck GmbH\Desktop\Projects\githubTest\ExperimentSkylightframe\ObjDir\AnyCPU\Debug\LichtbandzargeApp\LichtbandzargeApp.exe
+C:\Users\poliakov\OneDrive - Goldbeck GmbH\Desktop\Projects\githubTest\ExperimentSkylightframe\ObjDir\AnyCPU\Debug\LichtbandzargeApp\LichtbandzargeApp.pdb
