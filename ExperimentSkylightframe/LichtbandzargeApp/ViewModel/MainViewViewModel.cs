@@ -22,8 +22,20 @@ namespace LichtbandzargeApp.ViewModel
     public class MainViewViewModel : ViewModelBase
     {
         private Model myModel;
-        //NEW
-        
+        //NEW PROPERTIES:
+        private string _frameWidth;
+        public string FrameWidth
+        {
+            get { return _frameWidth; }
+            set { _frameWidth = value; OnPropertyChanged(nameof(FrameWidth)); }
+        }
+
+        private string _material;
+        public string Material
+        {
+            get { return _material; }
+            set { _material = value; OnPropertyChanged(nameof(Material)); }
+        }
         public MainViewViewModel()
         {
             this.myModel = new Model();
@@ -48,8 +60,8 @@ namespace LichtbandzargeApp.ViewModel
                 directionVector.Normalize();
 
                 // Define the distance between the beams (1000mm).
-                double distance = 1000;//double.TryParse(textBoxFrameWidth.Text.Trim(), out double result) ? result : 0.0; // In millimeters
-
+                //double distance = double.TryParse(textBoxFrameWidth.Text.Trim(), out double result) ? result : 0.0; // In millimeters
+                double distance = double.TryParse(FrameWidth, out double result) ? result : 0.0; // In millimeters
                 // Calculate the offset vector perpendicular to the direction vector.
                 TSG.Vector offsetVector = new TSG.Vector(-directionVector.Y, directionVector.X, 0) * (distance / 2);
 
@@ -65,7 +77,7 @@ namespace LichtbandzargeApp.ViewModel
                 Beam myBeam1 = new Beam(startPointBeam1, endPointBeam1);
                 // Set the Beam's properties.
                 myBeam1.Profile.ProfileString = "GVZ530.3";
-                myBeam1.Material.MaterialString = "S235";//textBoxMaterial.Text.Trim();
+                myBeam1.Material.MaterialString = Material;//"S235";//textBoxMaterial.Text.Trim();
                 myBeam1.Class = "0";
                 myBeam1.Position.Plane = Position.PlaneEnum.LEFT;
                 myBeam1.Position.Depth = Position.DepthEnum.FRONT;
@@ -76,7 +88,7 @@ namespace LichtbandzargeApp.ViewModel
                 Beam myBeam2 = new Beam(endPointBeam2, startPointBeam2);
                 // Set the Beam's properties.
                 myBeam2.Profile.ProfileString = "GVZ530.3";
-                myBeam2.Material.MaterialString = "S235";//textBoxMaterial.Text.Trim();
+                myBeam2.Material.MaterialString = Material; //"S235";//textBoxMaterial.Text.Trim();
                 myBeam2.Class = "0";
                 myBeam2.Position.Plane = Position.PlaneEnum.LEFT;
                 myBeam2.Position.Depth = Position.DepthEnum.FRONT;
@@ -100,7 +112,7 @@ namespace LichtbandzargeApp.ViewModel
 
                 // Set the properties for the perpendicular beams.
                 perpendicularBeam1.Profile.ProfileString = "GVZ532.2";
-                perpendicularBeam1.Material.MaterialString = "S235"; //textBoxMaterial.Text.Trim();
+                perpendicularBeam1.Material.MaterialString = Material;
                 perpendicularBeam1.Class = "0";
                 perpendicularBeam1.Position.Plane = Position.PlaneEnum.MIDDLE;
                 perpendicularBeam1.Position.Depth = Position.DepthEnum.FRONT;
@@ -108,7 +120,7 @@ namespace LichtbandzargeApp.ViewModel
                 perpendicularBeam1.Insert();
 
                 perpendicularBeam2.Profile.ProfileString = "GVZ532.2";
-                perpendicularBeam2.Material.MaterialString = "S235";//textBoxMaterial.Text.Trim();
+                perpendicularBeam2.Material.MaterialString = Material;
                 perpendicularBeam2.Class = "0";
                 perpendicularBeam2.Position.Plane = Position.PlaneEnum.MIDDLE;
                 perpendicularBeam2.Position.Depth = Position.DepthEnum.FRONT;
