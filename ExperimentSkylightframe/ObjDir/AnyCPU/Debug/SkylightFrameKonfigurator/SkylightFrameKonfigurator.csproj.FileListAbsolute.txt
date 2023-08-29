@@ -1,0 +1,7 @@
+C:\Users\poliakov\OneDrive - Goldbeck GmbH\Desktop\Projects\githubTest\ExperimentSkylightframe\ObjDir\AnyCPU\Debug\SkylightFrameKonfigurator\SkylightFrameKonfigurator.csproj.AssemblyReference.cache
+C:\Users\poliakov\OneDrive - Goldbeck GmbH\Desktop\Projects\githubTest\ExperimentSkylightframe\ObjDir\AnyCPU\Debug\SkylightFrameKonfigurator\MainWindow.g.cs
+C:\Users\poliakov\OneDrive - Goldbeck GmbH\Desktop\Projects\githubTest\ExperimentSkylightframe\ObjDir\AnyCPU\Debug\SkylightFrameKonfigurator\Views\WindowTyp1.g.cs
+C:\Users\poliakov\OneDrive - Goldbeck GmbH\Desktop\Projects\githubTest\ExperimentSkylightframe\ObjDir\AnyCPU\Debug\SkylightFrameKonfigurator\Views\WindowTyp2.g.cs
+C:\Users\poliakov\OneDrive - Goldbeck GmbH\Desktop\Projects\githubTest\ExperimentSkylightframe\ObjDir\AnyCPU\Debug\SkylightFrameKonfigurator\App.g.cs
+C:\Users\poliakov\OneDrive - Goldbeck GmbH\Desktop\Projects\githubTest\ExperimentSkylightframe\ObjDir\AnyCPU\Debug\SkylightFrameKonfigurator\SkylightFrameKonfigurator_MarkupCompile.cache
+C:\Users\poliakov\OneDrive - Goldbeck GmbH\Desktop\Projects\githubTest\ExperimentSkylightframe\ObjDir\AnyCPU\Debug\SkylightFrameKonfigurator\SkylightFrameKonfigurator_MarkupCompile.lref

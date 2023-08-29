@@ -6,14 +6,18 @@
         xmlns:local="clr-namespace:LichtbandzargeApp"                
         xmlns:tsd="clr-namespace:Tekla.Structures.Dialog;assembly=Tekla.Structures.Dialog"        
         xmlns:UIControls="clr-namespace:Tekla.Structures.Dialog.UIControls;assembly=Tekla.Structures.Dialog"
+        xmlns:myViewModel="clr-namespace:LichtbandzargeApp.ViewModel"
         mc:Ignorable="d" FontSize="18" FontFamily="Goldbeck TT"
         Title="GOLDBECK Lichtbandzarge" Height="650" Width="800" Background="White">
+    <Window.DataContext>
+        <myViewModel:MainViewViewModel/>
+    </Window.DataContext>
 
     <Grid>
         <Image Source="C:\Users\poliakov\OneDrive - Goldbeck GmbH\Desktop\OpenAPI\ExperimentSkylightframe\LichtbandzargeApp\Resourses\Typ1FrameWindow1.png" Height="250" Margin="57,97,170,287" />
-        <Button Content="Insert Skylightframe" Name="btnInsertFrame"  HorizontalAlignment="Left" Margin="58,430,0,0" VerticalAlignment="Top" Width="252" Click="btnInsertFrame_Click"/>
-        <TextBox Name="textBoxFrameWidth"  HorizontalAlignment="Left" Margin="634,242,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
-        <TextBox Name="textBoxMaterial"  HorizontalAlignment="Left" Margin="643,352,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Insert Skylightframe" Name="btnInsertFrame" Command="{Binding InsertFrameCommand}" HorizontalAlignment="Left" Margin="58,430,0,0" VerticalAlignment="Top" Width="252" Click="btnInsertFrame_Click"/>
+        <TextBox Name="textBoxFrameWidth" Text="{Binding FrameWidth, Mode=TwoWay}"  HorizontalAlignment="Left" Margin="634,242,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="textBoxMaterial" Text="{Binding Material, Mode=TwoWay}" HorizontalAlignment="Left" Margin="643,352,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label Content="Frame Width" HorizontalAlignment="Left" Margin="643,186,0,0" VerticalAlignment="Top"/>
         <Label Content="Material" HorizontalAlignment="Left" Margin="669,315,0,0" VerticalAlignment="Top"/>
         <Label Content="Zwischen Traufe und First " HorizontalAlignment="Left" Margin="500,10,0,0" VerticalAlignment="Top"/>
