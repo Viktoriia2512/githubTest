@@ -21,9 +21,18 @@ namespace LichtbandzargeApp.ViewModel
 {
     public class MainViewViewModel : ViewModelBase
     {
-        private Model myModel;
-        //NEW PROPERTIES:
+        private Model myModel;        
         private string _frameWidth;
+        ////NEW PROPERTY to control the transparency state:
+        //private bool _isSkylightFrameHighlighted;
+
+        //public bool IsSkylightFrameHighlighted
+        //{
+        //    get { return _isSkylightFrameHighlighted; }
+        //    set { _isSkylightFrameHighlighted = value; OnPropertyChanged(nameof(IsSkylightFrameHighlighted)); }
+        //}
+        //NEW:
+        private List<Beam> newlyInsertedBeams = new List<Beam>();
         public string FrameWidth
         {
             get { return _frameWidth; }
@@ -93,8 +102,7 @@ namespace LichtbandzargeApp.ViewModel
                 myBeam2.Position.Plane = Position.PlaneEnum.LEFT;
                 myBeam2.Position.Depth = Position.DepthEnum.FRONT;
                 myBeam2.Position.Rotation = Position.RotationEnum.TOP;
-                myBeam2.Insert();
-                // NEW PART:
+                myBeam2.Insert();                
                 // Calculate perpendicular vectors to the original direction vector.
                 TSG.Vector perpendicularVector1 = new TSG.Vector(directionVector.Y, -directionVector.X, 0);
                 TSG.Vector perpendicularVector2 = new TSG.Vector(-directionVector.Y, directionVector.X, 0);
@@ -126,13 +134,75 @@ namespace LichtbandzargeApp.ViewModel
                 perpendicularBeam2.Position.Depth = Position.DepthEnum.FRONT;
                 perpendicularBeam2.Position.Rotation = Position.RotationEnum.TOP;
                 perpendicularBeam2.Insert();
-                // END OF NEW PART
+                //////NEW PART.TRANSPARANCY:
+                //if (IsSkylightFrameHighlighted)
+                //{
+                //    myBeam1.SetRenderMode(BeamRenderModeEnum.Transparent);
+                //    myBeam2.SetRenderMode(BeamRenderModeEnum.Transparent);
+                //    perpendicularBeam1.SetRenderMode(BeamRenderModeEnum.Transparent);
+                //    perpendicularBeam2.SetRenderMode(BeamRenderModeEnum.Transparent);
+                //}
+                ////// END OF NEW PART
+                /////NEW
+                newlyInsertedBeams.Add(myBeam1);
+                newlyInsertedBeams.Add(myBeam2);
+                newlyInsertedBeams.Add(perpendicularBeam1);
+                newlyInsertedBeams.Add(perpendicularBeam2);
 
                 // Commit changes to the model.
                 myModel.CommitChanges();
             }
 
         }
+        private ICommand _highlightSkylightFrameCommand;
+        public ICommand HighlightSkylightFrameCommand
+        {
+            get
+            {
+                if (_highlightSkylightFrameCommand == null)
+                {
+                    _highlightSkylightFrameCommand = new CustomCommandImplementation(HighlightSkylightFrame);
+                }
+                return _highlightSkylightFrameCommand;
+            }
+        }
+
+        private void HighlightSkylightFrame(object parameter)
+        {
+            // Iterate through the inserted elements and change their property(color).
+            var modelObjects = new Model().GetModelObjectSelector().GetAllObjectsWithType(ModelObject.ModelObjectEnum.BEAM);
+
+            foreach (var beam in newlyInsertedBeams)
+            {               
+                    // Change the property(color) of the beam:
+                    beam.Class = "1"; // Red color
+                    beam.Modify();
+                
+            }
+
+            // Commit changes to the model.
+            new Model().CommitChanges();
+        }
+        //////NEW COMMAND: to toggle the transparency state when the  button is clicked.
+        //private ICommand _toggleTransparencyCommand;
+
+        //public ICommand ToggleTransparencyCommand
+        //{
+        //    get
+        //    {
+        //        if (_toggleTransparencyCommand == null)
+        //        {
+        //            _toggleTransparencyCommand = new CustomCommandImplementation(ToggleTransparency);
+        //        }
+        //        return _toggleTransparencyCommand;
+        //    }
+        //}
+
+        //private void ToggleTransparency(object parameter)
+        //{
+        //    IsSkylightFrameHighlighted = !IsSkylightFrameHighlighted;
+        //}
+
     }
 
 

@@ -6,12 +6,12 @@
         xmlns:local="clr-namespace:LichtbandzargeApp"                
         xmlns:tsd="clr-namespace:Tekla.Structures.Dialog;assembly=Tekla.Structures.Dialog"        
         xmlns:UIControls="clr-namespace:Tekla.Structures.Dialog.UIControls;assembly=Tekla.Structures.Dialog"
-        xmlns:myViewModel="clr-namespace:LichtbandzargeApp.ViewModel"
+        xmlns:myViewModel="clr-namespace:LichtbandzargeApp.ViewModel"        
         mc:Ignorable="d" FontSize="18" FontFamily="Goldbeck TT"
         Title="GOLDBECK Lichtbandzarge" Height="650" Width="800" Background="White">
     <Window.DataContext>
         <myViewModel:MainViewViewModel/>
-    </Window.DataContext>
+    </Window.DataContext>    
 
     <Grid>
         <Image Source="C:\Users\poliakov\OneDrive - Goldbeck GmbH\Desktop\OpenAPI\ExperimentSkylightframe\LichtbandzargeApp\Resourses\Typ1FrameWindow1.png" Height="250" Margin="57,97,170,287" />
@@ -22,8 +22,7 @@
         <Label Content="Material" HorizontalAlignment="Left" Margin="669,315,0,0" VerticalAlignment="Top"/>
         <Label Content="Zwischen Traufe und First " HorizontalAlignment="Left" Margin="400,10,0,0" VerticalAlignment="Top"/>
         <Image Source="C:\Users\poliakov\OneDrive - Goldbeck GmbH\Desktop\OpenAPI\ExperimentSkylightframe\LichtbandzargeApp\Resourses\Typ1Logo.png" Height="40" Width="70" Margin="620,10,10,580" />
-
-
-
+        <Button Content="Highlight Skylightframe" Command="{Binding HighlightSkylightFrameCommand}" Width="250" Height="25" Margin="-430,360,0,0"/>
+        
     </Grid>
 </Window>
