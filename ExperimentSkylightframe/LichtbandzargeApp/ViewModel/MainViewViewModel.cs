@@ -13,9 +13,10 @@ using Tekla.Structures.Model;
 using static Tekla.Structures.Model.Position;
 using TSG = Tekla.Structures.Geometry3d;
 using Tekla.Structures.Model.UI;
-
+//using System.Windows.Media;
 using Microsoft.Win32;
 using System.Windows.Media.TextFormatting;
+using Tekla.Structures;
 
 namespace LichtbandzargeApp.ViewModel
 {
@@ -23,15 +24,7 @@ namespace LichtbandzargeApp.ViewModel
     {
         private Model myModel;        
         private string _frameWidth;
-        ////NEW PROPERTY to control the transparency state:
-        //private bool _isSkylightFrameHighlighted;
-
-        //public bool IsSkylightFrameHighlighted
-        //{
-        //    get { return _isSkylightFrameHighlighted; }
-        //    set { _isSkylightFrameHighlighted = value; OnPropertyChanged(nameof(IsSkylightFrameHighlighted)); }
-        //}
-        //NEW:
+        
         private List<Beam> newlyInsertedBeams = new List<Beam>();
         public string FrameWidth
         {
@@ -134,16 +127,7 @@ namespace LichtbandzargeApp.ViewModel
                 perpendicularBeam2.Position.Depth = Position.DepthEnum.FRONT;
                 perpendicularBeam2.Position.Rotation = Position.RotationEnum.TOP;
                 perpendicularBeam2.Insert();
-                //////NEW PART.TRANSPARANCY:
-                //if (IsSkylightFrameHighlighted)
-                //{
-                //    myBeam1.SetRenderMode(BeamRenderModeEnum.Transparent);
-                //    myBeam2.SetRenderMode(BeamRenderModeEnum.Transparent);
-                //    perpendicularBeam1.SetRenderMode(BeamRenderModeEnum.Transparent);
-                //    perpendicularBeam2.SetRenderMode(BeamRenderModeEnum.Transparent);
-                //}
-                ////// END OF NEW PART
-                /////NEW
+              
                 newlyInsertedBeams.Add(myBeam1);
                 newlyInsertedBeams.Add(myBeam2);
                 newlyInsertedBeams.Add(perpendicularBeam1);
@@ -166,41 +150,43 @@ namespace LichtbandzargeApp.ViewModel
                 return _highlightSkylightFrameCommand;
             }
         }
+                
 
         private void HighlightSkylightFrame(object parameter)
         {
-            // Iterate through the inserted elements and change their property(color).
-            var modelObjects = new Model().GetModelObjectSelector().GetAllObjectsWithType(ModelObject.ModelObjectEnum.BEAM);
+            // Create a list to hold the newly inserted beams.
+            List<ModelObject> beamsToHighlight = new List<ModelObject>();
 
+            // Iterate through the newly inserted beams and add them to the list.
             foreach (var beam in newlyInsertedBeams)
-            {               
-                    // Change the property(color) of the beam:
-                    beam.Class = "1"; // Red color
-                    beam.Modify();
-                
+            {
+                beamsToHighlight.Add(beam);
             }
 
+            // Define the color you want to use for highlighting (e.g., red).
+            Tekla.Structures.Model.UI.Color highlightColor = new Tekla.Structures.Model.UI.Color(0.0, 0.0, 1.0, 0.4);
+
+            // Set the temporary state to change the color of the beams.
+            ModelObjectVisualization.SetTemporaryState(beamsToHighlight, highlightColor);
+
             // Commit changes to the model.
-            new Model().CommitChanges();
+            myModel.CommitChanges();
         }
-        //////NEW COMMAND: to toggle the transparency state when the  button is clicked.
-        //private ICommand _toggleTransparencyCommand;
-
-        //public ICommand ToggleTransparencyCommand
+        //private void HighlightSkylightFrame(object parameter)
         //{
-        //    get
-        //    {
-        //        if (_toggleTransparencyCommand == null)
-        //        {
-        //            _toggleTransparencyCommand = new CustomCommandImplementation(ToggleTransparency);
-        //        }
-        //        return _toggleTransparencyCommand;
+        //    // Iterate through the inserted elements and change their property(color).
+        //    var modelObjects = new Model().GetModelObjectSelector().GetAllObjectsWithType(ModelObject.ModelObjectEnum.BEAM);
+
+        //    foreach (var beam in newlyInsertedBeams)
+        //    {               
+        //            // Change the property(color) of the beam:
+        //            beam.Class = "1"; // Red color
+        //            beam.Modify();
+                
         //    }
-        //}
 
-        //private void ToggleTransparency(object parameter)
-        //{
-        //    IsSkylightFrameHighlighted = !IsSkylightFrameHighlighted;
+        //    // Commit changes to the model.
+        //    new Model().CommitChanges();
         //}
 
     }
